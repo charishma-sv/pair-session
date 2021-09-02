@@ -8,6 +8,7 @@ export function sum(input) {
         }else{
             delimiter.push(input.charAt(3))
             delimiter.push(input.charAt(6))
+           
         }
            delimiter.map(delimit => input = input.split(`${delimit}`).join())
            
@@ -28,13 +29,6 @@ export function sum(input) {
        
     }
     else if(/^\[/.test(input)){
-        // input = input.split('[')
-        // console.log(input.length,input)
-        // input.map(str =>{
-
-        // })
-        console.log('k')
-
        const startIndex=input.indexOf('[');
        const endIndex = input.indexOf(']')
        const delimiter = input.substr(startIndex+1,endIndex-1)
