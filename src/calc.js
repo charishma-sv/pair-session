@@ -2,21 +2,16 @@ export function sum(input) {
     if(input===null || input === undefined)return 0;
     
     if(/^\/\//.test(input)){
-        let delimiter =''
+        let delimiter =[]
         if(input.charAt(2)!='['){
-
-             delimiter = input.charAt(2)
-             input = input.replace(/\n/g,'')
-        input = input.split(`${delimiter}`).join()
-        input = input.replace(/\//g,'0')
+            delimiter.push(input.charAt(2))
         }else{
-            delimiter = input.charAt(3)+input.charAt(6)
-            delimiter = delimiter.split('')
-           delimiter.map(delimit => input = input.split(`${delimit}`).join())
-            console.log(delimiter,input)
+            delimiter.push(input.charAt(3))
+            delimiter.push(input.charAt(6))
         }
+           delimiter.map(delimit => input = input.split(`${delimit}`).join())
+           
         
-        //input = input.replace(new RegExp(`${delimiter}`), ',')
         
        
     }else if(/-/.test(input)){
